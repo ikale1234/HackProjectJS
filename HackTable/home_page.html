@@ -1,51 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Home Page</title>
 </head>
-<body>
-  <h1 id= "header"style = "text-align: center;">Quick Maths</h1>
-  <h2 id= "maxscore" style = "text-align: center;">hi</h2>
-  <h2 id= "skill" style = "text-align: center;">ji</h2>
-  <div style= "text-align: center;">
+
+<body style="background-color:rgb(255, 200, 246);">
+  <h1 id="header" style="text-align: center;">Quick Maths</h1>
+  <h2 id="maxscore" style="text-align: center;">hi</h2>
+  <h2 id="skill" style="text-align: center;">ji</h2>
+  <div style="text-align: center;">
     <button id="PlayButton">Play</button>
 
-</div>
-<script>
-  var skill = 0;
-  document.getElementById("header").innerHTML = "Hello "+localStorage.getItem("name");
-  document.getElementById("maxscore").innerHTML = "Highest Score: "+localStorage.getItem("max_score");
-  avg_score = localStorage.getItem("avg_score");
+  </div>
+  <script>
+    var skill = 0;
+    document.getElementById("header").innerHTML = "Hello " + localStorage.getItem("name");
+    document.getElementById("maxscore").innerHTML = "Highest Score: " + localStorage.getItem("max_score");
+    avg_score = localStorage.getItem("avg_score");
 
-  if(parseFloat(avg_score) < 5){
-    skill = 1;
-  } else if (parseFloat(avg_score) < 8){
-    skill = 2;
-  } else if (parseFloat(avg_score) < 11){
-    skill = 3;
-  } else if (parseFloat(avg_score) < 15){
-    skill = 4;
-  } else if (parseFloat(avg_score) < 19){
-    skill = 5;
-  } else if (parseFloat(avg_score) < 22){
-    skill = 6;
-  } else if (parseFloat(avg_score) < 25){
-    skill = 7;
-  } else if (parseFloat(avg_score) < 28){
-    skill = 8;
-  } else if (parseFloat(avg_score) < 31){
-    skill = 9;
-  } else {
-    skill = 10;
-  }
+    if (parseFloat(avg_score) < 5) {
+      skill = 1;
+    } else if (parseFloat(avg_score) < 8) {
+      skill = 2;
+    } else if (parseFloat(avg_score) < 11) {
+      skill = 3;
+    } else if (parseFloat(avg_score) < 15) {
+      skill = 4;
+    } else if (parseFloat(avg_score) < 19) {
+      skill = 5;
+    } else if (parseFloat(avg_score) < 22) {
+      skill = 6;
+    } else if (parseFloat(avg_score) < 25) {
+      skill = 7;
+    } else if (parseFloat(avg_score) < 28) {
+      skill = 8;
+    } else if (parseFloat(avg_score) < 31) {
+      skill = 9;
+    } else {
+      skill = 10;
+    }
 
-  document.getElementById("skill").innerHTML = "Skill Level: "+skill;
-var play_button = document.getElementById("PlayButton");
-  play_button.addEventListener("click", function () {
-    window.location.href = "choose_level.html";
-  });
+    document.getElementById("skill").innerHTML = "Skill Level: " + skill;
+    var play_button = document.getElementById("PlayButton");
+    play_button.addEventListener("click", function () {
+      window.location.href = "choose_level.html";
+    });
   </script>
 </body>
+
 </html>

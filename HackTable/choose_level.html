@@ -1,31 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Choose Level</title>
 </head>
-<body>
-  <h1 style= "text-align: center;">Choose Mode</h1>
-  <div style= "text-align: center;">
+
+<body style="background-color:rgb(200, 253, 255);">
+  <h1 style="text-align: center;">Choose Mode</h1>
+  <div style="text-align: center;">
     <button id="AddButton">Addition</button>
     <button id="SubButton">Subtraction</button>
     <button id="MultButton">Multiplication</button>
     <button id="DivButton">Division</button>
-</div>
-<script>
-  document.getElementById("AddButton").addEventListener("click", function () {
-  window.location.href = "addition_diff.html";
-});
-document.getElementById("SubButton").addEventListener("click", function () {
-  window.location.href = "subtraction_diff.html";
-});
-document.getElementById("MultButton").addEventListener("click", function () {
-  window.location.href = "multiplication_diff.html";
-});
-document.getElementById("DivButton").addEventListener("click", function () {
-  window.location.href = "division_diff.html";
-});
-</script>
+  </div>
+  <script>
+    document.getElementById("AddButton").addEventListener("click", function () {
+      window.location.href = "addition_diff.html";
+    });
+    document.getElementById("SubButton").addEventListener("click", function () {
+      window.location.href = "subtraction_diff.html";
+    });
+    document.getElementById("MultButton").addEventListener("click", function () {
+      window.location.href = "multiplication_diff.html";
+    });
+    document.getElementById("DivButton").addEventListener("click", function () {
+      window.location.href = "division_diff.html";
+    });
+  </script>
 </body>
+
 </html>
