@@ -484,7 +484,7 @@ if (in_game) {
       if (
         Math.sqrt(
           Math.abs(x_vals[i] - x_click) ** 2 +
-            Math.abs(y_vals[i] - y_click) ** 2
+          Math.abs(y_vals[i] - y_click) ** 2
         ) < 50
       ) {
         var chosen_index = i;

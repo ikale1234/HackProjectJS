@@ -1,39 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
-<body>
-  <h1 style= "text-align: center;">Enter Your Name</h1>
-  <div style= "text-align: center;">
-  <input id = "user_text"type="text"/>
-  <button id= "submit_name">Submit</button>
-</div>
-<script>
-  document.getElementById("submit_name").addEventListener("click", function () {
 
-  if (document.getElementById("user_text").value.length > 0){
-    var username = document.getElementById("user_text").value;
-    localStorage.setItem("name", username)
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function(){
-      if (this.readyState == 4 && this.status == 200){
-        var data = this.responseText;
-        data = data.split('\n');
-        localStorage.setItem("max_score", data[0]);
-        localStorage.setItem("avg_score", data[1]);
+<body style="background-color:rgb(255, 200, 246);">
+  <h1 style="text-align: center;">Enter Your Name</h1>
+  <div style="text-align: center;">
+    <input id="user_text" type="text" />
+    <button id="submit_name">Submit</button>
+  </div>
+  <script>
+    document.getElementById("submit_name").addEventListener("click", function () {
 
+      if (document.getElementById("user_text").value.length > 0) {
+        var username = document.getElementById("user_text").value;
+        localStorage.setItem("name", username)
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+          if (this.readyState == 4 && this.status == 200) {
+            var data = this.responseText;
+            data = data.split('\n');
+            localStorage.setItem("max_score", data[0]);
+            localStorage.setItem("avg_score", data[1]);
+
+          }
+        };
+
+        xhttp.open("GET", "login/" + username, true);
+        xhttp.send();
+
+        window.location.href = "home_page.html";
       }
-    };
-
-    xhttp.open("GET", "login/"+username, true);
-    xhttp.send();
-
-    window.location.href = "home_page.html";
-  }
-});
-</script>
+    });
+  </script>
 </body>
+
 </html>
