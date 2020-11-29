@@ -16,7 +16,7 @@
 <script>
   var skill = 0;
   document.getElementById("header").innerHTML = "Hello "+localStorage.getItem("name");
-  document.getElementById("maxscore").innerHTML = "Your highest score is "+localStorage.getItem("max_score");
+  document.getElementById("maxscore").innerHTML = "Highest Score: "+localStorage.getItem("max_score");
   avg_score = localStorage.getItem("avg_score");
 
   if(parseFloat(avg_score) < 5){
@@ -41,7 +41,7 @@
     skill = 10;
   }
 
-  document.getElementById("skill").innerHTML = "Your skill is "+skill;
+  document.getElementById("skill").innerHTML = "Skill Level: "+skill;
 var play_button = document.getElementById("PlayButton");
   play_button.addEventListener("click", function () {
     window.location.href = "choose_level.html";
