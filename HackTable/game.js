@@ -346,9 +346,11 @@ function create_circles(canvas) {
   }
   console.log(x_list);
   for (k = 0; k < x_list.length; k++) {
+    win.fillStyle = "#00f9ff";
     win.beginPath();
     win.arc(x_list[k], y_list[k], 50, 0, 2 * Math.PI);
     win.stroke();
+    win.fill();
     console.log(x_list[k]);
     console.log(y_list[k]);
   }
@@ -415,12 +417,14 @@ function get_values(canvas, level) {
   win.font = "20px Arial";
   win.textAlign = "center";
   for (i = 0; i < x_vals.length; i++) {
+    win.fillStyle = "#000000";
     win.fillText(answer_choices[i], x_vals[i], y_vals[i] + 7);
     if (answer_choices[i] === answer) {
       var correct_index = i;
     }
   }
   win.font = "30px Arial";
+  win.fillStyle = "#000000";
   win.fillText(question + "?", canvas.width / 2, 25);
   win.fillText("Score: " + points, canvas.width - 100, 25);
   win.fillText("Time Left: " + remaining_time, 100, 25);
@@ -508,7 +512,7 @@ if (in_game) {
       if (
         Math.sqrt(
           Math.abs(x_vals[i] - x_click) ** 2 +
-          Math.abs(y_vals[i] - y_click) ** 2
+            Math.abs(y_vals[i] - y_click) ** 2
         ) < 50
       ) {
         var chosen_index = i;
