@@ -13,8 +13,24 @@
 </div>
 <script>
   document.getElementById("submit_name").addEventListener("click", function () {
+
   if (document.getElementById("user_text").value.length > 0){
-    localStorage.setItem("name", document.getElementById("user_text").value)
+    var username = document.getElementById("user_text").value;
+    localStorage.setItem("name", username)
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function(){
+      if (this.readyState == 4 && this.status == 200){
+        var data = this.responseText;
+        data = data.split('\n');
+        localStorage.setItem("max_score", data[0]);
+        localStorage.setItem("avg_score", data[1]);
+
+      }
+    };
+
+    xhttp.open("GET", "login/"+username, true);
+    xhttp.send();
+
     window.location.href = "home_page.html";
   }
 });

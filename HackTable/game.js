@@ -27,7 +27,18 @@ function shuffle(array) {
   return array;
 }
 function end_game() {
-  localStorage.setItem("score", points.toString());
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function () {
+    if (this.readyState == 4 && this.status == 200) {
+      var data = this.responseText;
+      data = data.split("\n");
+      localStorage.setItem("max_score", data[0]);
+      localStorage.setItem("avg_score", data[1]);
+    }
+  };
+  username = localStorage.getItem("name");
+  xhttp.open("GET", "score/" + username + "/" + points, true);
+  xhttp.send();
   window.location.href = "home_page.html";
 }
 
