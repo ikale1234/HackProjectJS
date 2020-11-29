@@ -6,7 +6,7 @@ var in_game = document.getElementById("the_game");
 var level_index;
 var points = 0;
 var problems_answered = 0;
-
+var remaining_time = 30;
 function shuffle(array) {
   var currentIndex = array.length,
     temporaryValue,
@@ -25,6 +25,23 @@ function shuffle(array) {
   }
 
   return array;
+}
+function end_game() {
+  localStorage.setItem("score", points.toString());
+  window.location.href = "home_page.html";
+}
+
+function tell_time_left(interval, canvas) {
+  win = canvas.getContext("2d");
+  if (remaining_time === 0) {
+    clearTimeout(interval);
+  } else {
+    remaining_time -= 1;
+  }
+  win = canvas.getContext("2d");
+  win.font = "30px Arial";
+  win.clearRect(0, 0, 190, 30);
+  win.fillText("Time Left: " + remaining_time, 100, 25);
 }
 
 function getCursorPosition(canvas, event) {
@@ -309,39 +326,51 @@ function get_values(canvas, level) {
   var y_vals = coords[1];
   if (level === "1") {
     var values = get_level_1();
+    var increment = 1;
   }
   if (level === "2") {
     var values = get_level_2();
+    var increment = 3;
   }
   if (level === "3") {
     var values = get_level_3();
+    var increment = 5;
   }
   if (level === "4") {
     var values = get_level_4();
+    var increment = 1;
   }
   if (level === "5") {
     var values = get_level_5();
+    var increment = 3;
   }
   if (level === "6") {
     var values = get_level_6();
+    var increment = 6;
   }
   if (level === "7") {
     var values = get_level_7();
+    var increment = 1;
   }
   if (level === "8") {
     var values = get_level_8();
+    var increment = 3;
   }
   if (level === "9") {
     var values = get_level_9();
+    var increment = 7;
   }
   if (level === "10") {
     var values = get_level_10();
+    var increment = 1;
   }
   if (level === "11") {
     var values = get_level_11();
+    var increment = 4;
   }
   if (level === "12") {
     var values = get_level_12();
+    var increment = 12;
   }
 
   var question = values[0];
@@ -359,7 +388,8 @@ function get_values(canvas, level) {
   win.font = "30px Arial";
   win.fillText(question + "?", canvas.width / 2, 25);
   win.fillText("Score: " + points, canvas.width - 100, 25);
-  return [correct_index, x_vals, y_vals];
+  win.fillText("Time Left: " + remaining_time, 100, 25);
+  return [correct_index, x_vals, y_vals, increment];
 }
 
 if (adding) {
@@ -421,11 +451,18 @@ if (dividing) {
 if (in_game) {
   level_index = localStorage.getItem("level");
   console.log(level_index);
+  setTimeout(function () {
+    end_game();
+  }, 30000);
+  var tellSeconds = setInterval(function () {
+    tell_time_left(tellSeconds, canvas);
+  }, 1000);
   var canvas = document.getElementById("game_win");
   var answer_data = get_values(canvas, level_index);
   var correct_index = answer_data[0];
   var x_vals = answer_data[1];
   var y_vals = answer_data[2];
+  var increment = answer_data[3];
 
   canvas.addEventListener("click", function (e) {
     var click_coords = getCursorPosition(canvas, e);
@@ -448,7 +485,7 @@ if (in_game) {
       console.log(correct_index);
       console.log(points);
       if (chosen_index === correct_index) {
-        points += 1;
+        points += increment;
       }
       problems_answered += 1;
       win = canvas.getContext("2d");
@@ -457,6 +494,7 @@ if (in_game) {
       correct_index = answer_data[0];
       x_vals = answer_data[1];
       y_vals = answer_data[2];
+      increment = answer_data[3];
     }
   });
 }
