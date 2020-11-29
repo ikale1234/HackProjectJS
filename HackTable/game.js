@@ -69,10 +69,12 @@ function get_level_1() {
   var c = a + b;
   ans_list.push(c);
   for (i = 0; i < 4; i++) {
-    ans_list.push(Math.trunc(Math.random() * 18) + 2);
-    while (ans_list[ans_list.length - 1] === c) {
-      ans_list.pop();
-      ans_list.push(Math.trunc(Math.random() * 18) + 2);
+    ans_list.push(Math.trunc(Math.random() * 17) + 2);
+    for (j = 0; j < ans_list.length - 1; j++) {
+      while (ans_list[ans_list.length - 1] === ans_list[j]) {
+        ans_list.pop();
+        ans_list.push(Math.trunc(Math.random() * 17) + 2);
+      }
     }
   }
   ans_list = shuffle(ans_list);
@@ -86,10 +88,12 @@ function get_level_2() {
   var c = a + b;
   ans_list.push(c);
   for (i = 0; i < 4; i++) {
-    ans_list.push(Math.trunc(Math.random() * 89) + 11);
-    while (ans_list[ans_list.length - 1] === c) {
-      ans_list.pop();
-      ans_list.push(Math.trunc(Math.random() * 89) + 11);
+    ans_list.push(Math.trunc(Math.random() * 20) + c - 10);
+    for (j = 0; j < ans_list.length - 1; j++) {
+      while (ans_list[ans_list.length - 1] === ans_list[j]) {
+        ans_list.pop();
+        ans_list.push(Math.trunc(Math.random() * 20) + c - 10);
+      }
     }
   }
   ans_list = shuffle(ans_list);
@@ -103,10 +107,12 @@ function get_level_3() {
   var c = a + b;
   ans_list.push(c);
   for (i = 0; i < 4; i++) {
-    ans_list.push(Math.trunc(Math.random() * 160) + 20);
-    while (ans_list[ans_list.length - 1] === c) {
-      ans_list.pop();
-      ans_list.push(Math.trunc(Math.random() * 160) + 20);
+    ans_list.push(Math.trunc(Math.random() * 20) + c - 10);
+    for (j = 0; j < ans_list.length - 1; j++) {
+      while (ans_list[ans_list.length - 1] === ans_list[j]) {
+        ans_list.pop();
+        ans_list.push(Math.trunc(Math.random() * 20) + c - 10);
+      }
     }
   }
   ans_list = shuffle(ans_list);
@@ -128,10 +134,12 @@ function get_level_4() {
   var c = a - b;
   ans_list.push(c);
   for (i = 0; i < 4; i++) {
-    ans_list.push(Math.trunc(Math.random() * 9));
-    while (ans_list[ans_list.length - 1] === c) {
-      ans_list.pop();
-      ans_list.push(Math.trunc(Math.random() * 9));
+    ans_list.push(Math.trunc(Math.random() * 8) + 1);
+    for (j = 0; j < ans_list.length - 1; j++) {
+      while (ans_list[ans_list.length - 1] === ans_list[j]) {
+        ans_list.pop();
+        ans_list.push(Math.trunc(Math.random() * 8) + 1);
+      }
     }
   }
   ans_list = shuffle(ans_list);
@@ -146,10 +154,12 @@ function get_level_5() {
   var c = a - b;
   ans_list.push(c);
   for (i = 0; i < 4; i++) {
-    ans_list.push(Math.trunc(Math.random() * 96) + 1);
-    while (ans_list[ans_list.length - 1] === c) {
-      ans_list.pop();
-      ans_list.push(Math.trunc(Math.random() * 96) + 1);
+    ans_list.push(Math.trunc(Math.random() * 10) + c - 5);
+    for (j = 0; j < ans_list.length - 1; j++) {
+      while (ans_list[ans_list.length - 1] === ans_list[j]) {
+        ans_list.pop();
+        ans_list.push(Math.trunc(Math.random() * 10) + c - 5);
+      }
     }
   }
   ans_list = shuffle(ans_list);
@@ -170,10 +180,12 @@ function get_level_6() {
   var c = a - b;
   ans_list.push(c);
   for (i = 0; i < 4; i++) {
-    ans_list.push(Math.trunc(Math.random() * 89) + 1);
-    while (ans_list[ans_list.length - 1] === c) {
-      ans_list.pop();
-      ans_list.push(Math.trunc(Math.random() * 89) + 1);
+    ans_list.push(Math.trunc(Math.random() * 10) + c - 5);
+    for (j = 0; j < ans_list.length - 1; j++) {
+      while (ans_list[ans_list.length - 1] === ans_list[j]) {
+        ans_list.pop();
+        ans_list.push(Math.trunc(Math.random() * 10) + c - 5);
+      }
     }
   }
   ans_list = shuffle(ans_list);
@@ -190,10 +202,12 @@ function get_level_7() {
   var c = a * b;
   ans_list.push(c);
   for (i = 0; i < 4; i++) {
-    ans_list.push(Math.trunc(Math.random() * 800) + 1);
-    while (ans_list[ans_list.length - 1] === c) {
-      ans_list.pop();
-      ans_list.push(Math.trunc(Math.random() * 800) + 1);
+    ans_list.push(Math.trunc(Math.random() * 899) + 1);
+    for (j = 0; j < ans_list.length - 1; j++) {
+      while (ans_list[ans_list.length - 1] === ans_list[j]) {
+        ans_list.pop();
+        ans_list.push(Math.trunc(Math.random() * 899) + 1);
+      }
     }
   }
   ans_list = shuffle(ans_list);
@@ -208,10 +222,12 @@ function get_level_8() {
   var c = a * b;
   ans_list.push(c);
   for (i = 0; i < 4; i++) {
-    ans_list.push(Math.trunc(Math.random() * 144) + 1);
-    while (ans_list[ans_list.length - 1] === c) {
-      ans_list.pop();
-      ans_list.push(Math.trunc(Math.random() * 144) + 1);
+    ans_list.push(Math.trunc(Math.random() * 20) + c - 10);
+    for (j = 0; j < ans_list.length - 1; j++) {
+      while (ans_list[ans_list.length - 1] === ans_list[j]) {
+        ans_list.pop();
+        ans_list.push(Math.trunc(Math.random() * 20) + c - 10);
+      }
     }
   }
   ans_list = shuffle(ans_list);
@@ -227,10 +243,12 @@ function get_level_9() {
   var c = a * b;
   ans_list.push(c);
   for (i = 0; i < 4; i++) {
-    ans_list.push(Math.trunc(Math.random() * 880) + 10);
-    while (ans_list[ans_list.length - 1] === c) {
-      ans_list.pop();
-      ans_list.push(Math.trunc(Math.random() * 880) + 10);
+    ans_list.push(Math.trunc(Math.random() * 20) + c - 10);
+    for (j = 0; j < ans_list.length - 1; j++) {
+      while (ans_list[ans_list.length - 1] === ans_list[j]) {
+        ans_list.pop();
+        ans_list.push(Math.trunc(Math.random() * 20) + c - 10);
+      }
     }
   }
   ans_list = shuffle(ans_list);
@@ -247,9 +265,11 @@ function get_level_10() {
   ans_list.push(c);
   for (i = 0; i < 4; i++) {
     ans_list.push(Math.trunc(Math.random() * 99) + 1);
-    while (ans_list[ans_list.length - 1] === c) {
-      ans_list.pop();
-      ans_list.push(Math.trunc(Math.random() * 99) + 1);
+    for (j = 0; j < ans_list.length - 1; j++) {
+      while (ans_list[ans_list.length - 1] === ans_list[j]) {
+        ans_list.pop();
+        ans_list.push(Math.trunc(Math.random() * 99) + 1);
+      }
     }
   }
   ans_list = shuffle(ans_list);
@@ -264,9 +284,11 @@ function get_level_11() {
   ans_list.push(c);
   for (i = 0; i < 4; i++) {
     ans_list.push(Math.trunc(Math.random() * 12) + 1);
-    while (ans_list[ans_list.length - 1] === c) {
-      ans_list.pop();
-      ans_list.push(Math.trunc(Math.random() * 12) + 1);
+    for (j = 0; j < ans_list.length - 1; j++) {
+      while (ans_list[ans_list.length - 1] === ans_list[j]) {
+        ans_list.pop();
+        ans_list.push(Math.trunc(Math.random() * 12) + 1);
+      }
     }
   }
   ans_list = shuffle(ans_list);
@@ -280,10 +302,12 @@ function get_level_12() {
 
   ans_list.push(c);
   for (i = 0; i < 4; i++) {
-    ans_list.push(Math.trunc(Math.random() * 80) + 20);
-    while (ans_list[ans_list.length - 1] === c) {
-      ans_list.pop();
-      ans_list.push(Math.trunc(Math.random() * 80) + 20);
+    ans_list.push(Math.trunc(Math.random() * 20) + c - 10);
+    for (j = 0; j < ans_list.length - 1; j++) {
+      while (ans_list[ans_list.length - 1] === ans_list[j]) {
+        ans_list.pop();
+        ans_list.push(Math.trunc(Math.random() * 20) + c - 10);
+      }
     }
   }
   ans_list = shuffle(ans_list);
