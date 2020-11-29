@@ -7,8 +7,13 @@ lst = {}
 
 
 @app.route('/')
-def home_page():
+def username_page():
     app.logger.info(os.getcwd())
+    return send_from_directory("HackTable", "username_input.html")
+
+
+@app.route('/home_page.html')
+def home_page():
     return send_from_directory("HackTable", "home_page.html")
 
 
