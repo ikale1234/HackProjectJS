@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1 style= "text-align: center;">Enter Your Name</h1>
+  <div style= "text-align: center;">
+  <input id = "user_text"type="text"/>
+  <button id= "submit_name">Submit</button>
+</div>
+<script>
+  document.getElementById("submit_name").addEventListener("click", function () {
+  if (document.getElementById("user_text").value.length > 0){
+    localStorage.setItem("name", document.getElementById("user_text").value)
+    window.location.href = "home_page.html";
+  }
+});
+</script>
+</body>
+</html>
